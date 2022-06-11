@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+    MySNSTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        DisplayName: "TestApp alerts"
+        TopicName: "TestApp_alert"
+        Subscription:
+        - Endpoint: "endpoint@domain.com"
+          Protocol: email

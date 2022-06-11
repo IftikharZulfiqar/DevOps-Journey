@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: BiCS AWS CloudFormation Generic EFS Template
+Parameters:
+  VolumeName:
+    Description: The name to be used for the EFS volume
+    Type: String
+    MinLength: '1'
+  TSM:
+    Type: String
+    Default: Iftikhar Ali
+  Environment:
+    Type: String
+    Default: DEV
+Resources:
+  MountTargetSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Security group for mount target
+      VpcId: vpc-dfa48fa4
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: '2049'
+        ToPort: '2049'
+        CidrIp: '0.0.0.0/0'
+  FileSystem:
+    Type: AWS::EFS::FileSystem
+    Properties:
+      Encrypted: true
+      PerformanceMode: generalPurpose
+      FileSystemTags:
+      - Key: Name
+        Value: !Ref VolumeName
+      - Key: TSM
+        Value: !Ref TSM
+  MountTarget:
+    Type: AWS::EFS::MountTarget
+    Properties:
+      FileSystemId:
+        Ref: FileSystem
+      SubnetId: subnet-9352aabd
+      SecurityGroups:
+      - Ref: MountTargetSecurityGroup
+Outputs:
+  MountTargetID:
+    Description: Mount target ID
+    Value:
+      Ref: MountTarget
+  MountTargetIP:
+    Description: Mount target IP
+    Value: !GetAtt
+      - MountTarget
+      - IpAddress
+  FileSystemID:
+    Description: File system ID
+    Value:
+      Ref: FileSystem

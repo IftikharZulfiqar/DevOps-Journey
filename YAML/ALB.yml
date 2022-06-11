@@ -1,0 +1,97 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Create and Configure HA ALB
+Parameters:
+  LBName:
+    Type: String
+    Default: high-alb-v1-tst
+    Description: Enter the Application LoadBalancer Name
+  VPC:
+    Type: 'AWS::EC2::VPC::Id'
+    Default: vpc-dfa48fa4
+    Description: VPC for ALB
+  
+  SecurityGroupIds:
+    Type: String
+    Default: >-
+      sg-2bc28e9,sg-be92de333d130
+    Description: Enter Security Group ID
+  Secgrp1:
+    Type: String
+    Default: sg-fc3272bc28e9
+    Description: List of Subnets for Autoscaling Group
+  Secgrp2:
+    Type: String
+    Default: sg-be92de333d130
+    Description: List of Subnets for Autoscaling Group
+  
+  Subnet1:
+    Type: String
+    Default: subnet-d837c984
+    Description: List of Subnets for Autoscaling Group
+  Subnet2:
+    Type: String
+    Default: subnet-9352aabd
+    Description: List of Subnets for Autoscaling Group
+  Subnet3:
+    Type: String
+    Default: subnet-06ff724c
+    Description: List of Subnets for Autoscaling Group
+  
+  WebInstance1:
+    Type: String
+    Default: i-0cc89d00343171f
+    Description: WebInstance1 ID EC2
+  WebInstance2:
+    Type: String
+    Default: i-0759053e0c7c9cc
+    Description: WebInstance2 ID EC2
+  WebInstance3:
+    Type: String
+    Default: i-026fb67da9a743e
+    Description: WebInstance2 ID EC2
+  WebInstance4:
+    Type: String
+    Default: i-0d696a6aa510ed7
+    Description: WebInstance2 ID EC2
+
+Resources:
+  ALB:
+    Type: 'AWS::ElasticLoadBalancing::LoadBalancer'
+    Properties:
+      Scheme: internal
+      LoadBalancerName: !Ref LBName     
+      HealthCheck:
+        Target: 'TCP:80'
+        HealthyThreshold: '3'
+        UnhealthyThreshold: '3'
+        Interval: '30'
+        Timeout: '5'
+      Instances:
+        - !Ref WebInstance1
+        - !Ref WebInstance2
+        - !Ref WebInstance3
+        - !Ref WebInstance4
+      Listeners:
+        - LoadBalancerPort: '443'
+          Protocol: HTTPS
+          SSLCertificateId: !Sub "arn:aws:acm:ADD ARN of Certificate"
+          InstancePort: '80'
+          InstanceProtocol: HTTP
+      LBCookieStickinessPolicy:
+        - CookieExpirationPeriod: '18600'
+          PolicyName: HA-Policy
+      Subnets:
+        - !Ref Subnet1
+        - !Ref Subnet2
+        - !Ref Subnet3
+      SecurityGroups:
+        - !Ref Secgrp1
+        - !Ref Secgrp2
+Outputs:
+  LBEndpoint:
+    Description: endpoint of ALB
+    Value: !GetAtt 
+      - ALB
+      - DNSName
+  LoadBalancer:
+    Value: !Ref ALB

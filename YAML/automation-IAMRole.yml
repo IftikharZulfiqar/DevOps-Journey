@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  IAMROLECROSSACC:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+        - Effect: Allow
+          Principal:
+            AWS: 'AccountID'
+          Action:
+          - sts:AssumeRole
+      Path: "/"
+      Policies:
+      - PolicyName: EC2_StartStopList_Policy
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - ec2:StartInstances
+            - ec2:StopInstances
+            - s3:CreateBucket
+            - s3:DeleteBucket
+            - s3:PutBucketTagging
+            - s3:PutBucketPublicAccessBlock
+            - s3:ListBucket
+            - ec2:Describe*
+            - cloudwatch:ListMetrics
+            - cloudwatch:GetMetricStatistics
+            - elasticloadbalancing:Describe*
+            - cloudwatch:Describe*
+            - autoscaling:Describe*
+            - ssm:SendCommand
+            - rds:CreateDBInstance
+            - rds:DescribeDBInstances
+            - rds:ModifyDBInstance
+            - s3:DeleteObject
+            - rds:DeleteDBInstance
+            - ec2:RebootInstances
+            - rds:AddTagsToResource
+            - dynamodb:PutItem
+            - dynamodb:Scan
+            - iam:ListRoles
+            - workspaces:RebootWorkspaces
+            - workspaces:DescribeWorkspaces
+            - s3:PutEncryptionConfiguration
+            - s3:PutBucketLogging
+            - s3:PutLifecycleConfiguration
+            - s3:PutBucketAcl
+            - s3:PutBucketVersioning
+            - s3:DeleteObjectVersion
+            - s3:ListBucketVersions
+            Resource: "*"
+      RoleName: nodered_automation_role_crossAccount
