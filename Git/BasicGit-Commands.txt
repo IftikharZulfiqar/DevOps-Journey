@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------------------
+Quick Start with Git:
+# Below commands used for the git hub configurations 
+git config --global user.name
+git config --global user.email
+git config --list
+git init
+
+# How to check the status
+git status
+git status --short
+
+# Adds a change in the working directory to the staging area
+git add .
+
+# "commit" command is used to save your changes to the local repository
+git commit -m "message"
+
+# shows a list of all the commits made to a repository
+git log
+git show
+
+# git push command is used to upload local repository content to a remote repository.
+git remote add origin <url>
+git push -i orign master
+
+# pull command is used to fetch and download content from a remote repository 
+# and immediately update the local repository to match that content.
+git pull -u origin master
+
+# git ignored - a file which Git has been explicitly told to ignore
+git add .gitignore 
+git log --oneline
+
+# branch represents an independent line of development.
+git branch
+git branch <branch-name>
+git checkout <branch-name>
+git branch -d <branch-name>
+git merge <branch name>
+
+# git stash temporarily shelves changes you've made to your working copy 
+# so you can work on something else, and then come back and re-apply them later on. 
+git stash
+git stash list
+git stash apply stash!{0}
+git stash clear
+
+#  git reset to rewind history without changing the contents of your local files
+git reset <file-name>
+git reset .
+git reset --hard
+git revert
+
+# git clean is a convenience method for deleting untracked files in a repo's working directory
+git clean -f
+git clean -n
+
+# Adds Tags 
+git tag -a
+git tag
+git show <tag name>
+git clone
+-----------------------------------------------------------
