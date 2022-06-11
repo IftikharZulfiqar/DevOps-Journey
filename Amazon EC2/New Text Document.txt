@@ -1,0 +1,14 @@
+https://www.edureka.co/blog/ec2-aws-tutorial-elastic-compute-cloud/?utm_source=lms&utm_medium=aws-architect&utm_campaign=ec2-aws-tutorial-231118
+
+
+https://learning.edureka.co/classroom/presentation/790/7140/126384?tab=CourseContent
+
+https://www.edureka.co/blog/amazon-lightsail-tutorial/?utm_source=lms&utm_medium=aws-architect&utm_campaign=amazon-lightsail-231118
+
+
+
+Public key + Private Key = Key Pair
+? Amazon EC2 uses public and private key cryptography to encrypt and decrypt information while connecting to EC2
+? Public key is used to encrypt a data, while recipient uses private key to decrypt the same
+? AWS issues .pem file, client needs to convert it to a format which is recognized by client software
+For Window users -Convert .pem file to ppk file using puttygen software
