@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "2.2",
+  "description": "Command Document Example JSON Template",
+  "parameters": {
+    "Message": {
+      "type": "String",
+      "description": "Example",
+      "default": "Hello World"
+    }
+  },
+  "mainSteps": [
+    {
+      "action": "aws:runShellScript",
+      "name": "example",
+      "inputs": {
+        "runCommand": [
+          "#!/bin/bash",
+          "cd /usr/local/bin",
+          "curl -O -L 'https://github.com/grafana/loki/releases/download/v2.4.1/promtail-linux-amd64.zip'",
+          "unzip 'promtail-linux-amd64.zip'",
+          "sudo chmod a+x 'promtail-linux-amd64'",
+          "cat << 'EOF' > /usr/local/bin/config-promtail.yml",
+          "server:",
+          " http_listen_port: 9080",
+          " grpc_listen_port: 0",
+          "positions:",
+          " filename: /tmp/positions.yaml",
+          "clients:",
+          " - url: 'http://loki.regeneron.regn.com:3100/loki/api/v1/push'",
+          "scrape_configs:",
+          " - job_name: system",
+          "   static_configs:",
+          "     - targets:",
+          "       - localhost",
+          "       labels:",
+          "         job: varlogs",
+          "         __path__: /var/log/*log",
+          "EOF",
+          "sudo useradd --system promtail",
+          "cat << 'EOF' > /etc/systemd/system/promtail.service",
+          "[Unit]",
+          "Description=Promtail service",
+          "After=network.target",
+          "[Service]",
+          "Type=simple",
+          "User=promtail",
+          "ExecStart=/usr/local/bin/promtail-linux-amd64 -config.file /usr/local/bin/config-promtail.yml",
+          "[Install]",
+          "WantedBy=multi-user.target",
+          "EOF",
+          "sudo systemctl daemon-reload",
+          "sudo systemctl start promtail",
+          "sudo systemctl enable promtail.service",
+          "sudo service promtail status"
+        ]
+      }
+    }
+  ]
+}

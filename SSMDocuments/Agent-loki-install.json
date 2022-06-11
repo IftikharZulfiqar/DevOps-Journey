@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "2.2",
+  "description": "Command Document Example JSON Template",
+  "parameters": {
+    "Message": {
+      "type": "String",
+      "description": "Example",
+      "default": "Hello World"
+    }
+  },
+  "mainSteps": [
+    {
+      "action": "aws:runShellScript",
+      "name": "example",
+      "inputs": {
+        "runCommand": [
+          "#!/bin/bash",
+
+          "cd /usr/local/bin",
+          "curl -O -L 'https://github.com/grafana/loki/releases/download/v2.4.1/loki-linux-amd64.zip'",
+          "unzip 'loki-linux-amd64.zip'",
+          "chmod a+x 'loki-linux-amd64'",
+
+          "cat << 'EOF' > /usr/local/bin/config-loki.yml",
+          "auth_enabled: false",
+
+          "server:",
+          "   http_listen_port: 3100",
+          "   grpc_listen_port: 9096",
+
+          "common:",
+          "   path_prefix: /tmp/loki",
+          "   storage:",
+          "       filesystem:",
+          "           chunks_directory: /tmp/loki/chunks",
+          "           rules_directory: /tmp/loki/rules",
+          "   replication_factor: 1",
+          "   ring:",
+          "       instance_addr: 127.0.0.1",
+          "       kvstore:",
+          "           store: inmemory",
+
+          "schema_config:",
+          "   configs:",
+          "       - from: 2020-10-24",
+          "         store: boltdb-shipper",
+          "         object_store: filesystem",
+          "         schema: v11",
+          "         index:",
+          "           prefix: index_",
+          "           period: 24h",
+
+          "ruler:",
+          "   alertmanager_url: http://loki.regeneron.regn.com:9093",
+
+          "EOF",
+
+          "sudo useradd --system loki",
+
+          "cat << 'EOF' > /etc/systemd/system/loki.service",
+          "[Unit]",
+          "Description=Loki service",
+          "After=network.target",
+
+          "[Service]",
+          "Type=simple",
+          "User=loki",
+          "ExecStart=/usr/local/bin/loki-linux-amd64 -config.file /usr/local/bin/config-loki.yml",
+
+          "[Install]",
+          "WantedBy=multi-user.target",
+          "EOF",
+
+          "sudo service loki start",
+          "sudo systemctl enable loki.service",
+          "sudo service loki status"
+        ]
+      }
+    }
+  ]
+}
