@@ -5,6 +5,8 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import csv
 
+
+#Make sure you have configured CLI and User have approperiate IAM access 
 def sendEmail():
     SUBJECT = 'Daily Volume Inventory Report'
     SENDER = "iftikharzulfiqar6@gmail.com"
