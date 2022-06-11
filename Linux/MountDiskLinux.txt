@@ -1,0 +1,25 @@
+How to mounnt the Disk in Linux
+List the attached disk using the below commnad:
+lsblk
+
+Create a file system on the disk nvme1n1
+sudo mkfs -t xfs /dev/nvme1n1
+
+UUID of the new disk not it down
+sudo blkid -s UUID -o value /dev/nvme1n1
+
+Make directory to mount the disk on
+sudo mkdir temp
+
+Mount disk to the directory
+sudo mount /dev/nvme1n1 /temp
+
+Check if the disk has been mounted
+mount | grep nvme1n1
+
+Add the mounted disk data in the fstab file
+sudo vi /etc/fstab
+
+
+Add the mount details like below:
+Uuid /temp xfx default 0 0

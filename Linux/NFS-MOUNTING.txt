@@ -1,0 +1,19 @@
+================= NFS MOUNTING ===============================
+showmount -e 10.20.212.210
+
+goto root by sudo -i and then cd ..
+
+make dir that would serve for mount point
+command: mkdir /Phoenix/
+
+
+mount the mount point to dir
+command: mount -t nfs -o vers=3 10.20.220.203:/Phoenix /Phoenix
+
+df -h ==> to check the mountpoint
+
+edit entry in fstab
+command: 10.20.220.203:/Phoenix /Phoenix nfs nosuid,rw,sync,hard,intr 0 0
+
+
+========================================================================================================================================================

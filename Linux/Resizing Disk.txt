@@ -1,0 +1,12 @@
+Resizing Disk
+
+These are the steps for disk resizing.
+•	fdisk –l  		(To List all disks)
+
+•	apt-get update
+•	apt-get install cloud-initramfs-growroot
+•	growpart /dev/sda 1
+ 
+•	resize2fs /dev/sda1
+ 
+•	df  –h
