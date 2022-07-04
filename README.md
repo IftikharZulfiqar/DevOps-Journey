@@ -6,10 +6,13 @@ Lets start with the DevOps/SysOps Journey.
 GitHub Repo Link: https://github.com/IftikharZulfiqar/DevOps-Journey
 
 # Linux Essentials: 
-- First of all, knowledge of Linux and Windows administrations is of vital importance. Particularly, Linux is highly crucial and it is used in every step of the DevOps path. 
-- I started with Linux and covered the topics of Linux Fundamental, Linux Architecture, Linux Administrations, Linux Networking, and Linux Shell Script.
-- You should also be well-versed in the following areas:
+First of all, knowledge of Linux and Windows administrations is of vital importance. Particularly, Linux is highly crucial and it is used in every step of the DevOps path. 
+
+I started with Linux and covered the topics of Linux Fundamental, Linux Architecture, Linux Administrations, Linux Networking, and Linux Shell Script.
+
+You should also be well-versed in the following areas:
 Disk Management, File Permission, Access Control Lists (ACL), Searching, File Commands, User Management, Networking, SSH Login, and File transfer.
+
 Knowledge without practice is useless. Practice makes a person perfect, or at least takes a person close to a significantly reliable output. As practice, I have worked on the following scripts:
 1.	Add Public IP to Security Group
 This script checks the Public IP rule in Security Groups (SGs) of EC2 instances by a specified filter and if the IP does not exist in SG, it will add the public IP.
@@ -33,7 +36,8 @@ Bash Script Tutorial: https://www.youtube.com/watch?v=e7BufAVwDiM&ab_channel=lin
 A separate folder in the git hub repository has been added along with all the relevant data. You can also find the E-Books and practical examples.  
 
 # Networking Essentials:
-- The next topic is Networking. It is one of the most important pillars to continuing this Journey. Knowing VPC and its components is very helpful in designing cloud architecture and solutions. Knowledge of the following topics is essential.
+The next topic is Networking. It is one of the most important pillars to continuing this Journey. Knowing VPC and its components is very helpful in designing cloud architecture and solutions. Knowledge of the following topics is essential.
+
 VPC Components:
 -	Subnets 
 -	Elastic Network Interfaces 
@@ -47,15 +51,20 @@ VPC Components:
 -	Disaster Recovery 
 -	VPC Flow Logs
 -	VPC Access Control List
+
 I have used all these components within the AWS Cloud Platform. Designed and Implemented solutions that are High available and secure.
+
 I have added the Network folder in the repository and shared the AWS Security and Linux Networking E-Book as a guide. 
 Helpful Link:
 https://www.youtube.com/watch?v=rv3QK2UquxM&ab_channel=NetworkKings
 
 # Knowledge of YAML/JSON
-- The next stop is YAML. We can take help from the open-source community to learn YAML. I also take help from YouTube and some Udemy-based tutorials. One link is mentioned below for a quick start.
+The next stop is YAML. We can take help from the open-source community to learn YAML. I also take help from YouTube and some Udemy-based tutorials. 
+- One link is mentioned below for a quick start.
 https://www.youtube.com/watch?v=1uFVr15xDGg&ab_channel=TechWorldwithNana   
+
 As I am working in AWS Cloud and my resource is CloudFormation. CloudFormation is a JSON-and-YAML-based Infrastructure as a code service.  I had provisioned EC2, ELB, S3, Lambda, SQS, SNS, IAM roles, ALB, Lambda, and many AWS services using YAML.
+
 I have added the YAML folder in my Repo and shared some templates like:
 1.	AWS Application Load Balancer Provisioning 
 2.	AWS IAM Role Creation 
@@ -65,7 +74,9 @@ I have added the YAML folder in my Repo and shared some templates like:
 6.	AWS SNS Provisioning
 
 # Git Essentials
-- Now let us move on toward the GIT. Git is very essential and it is used in every professional project and every software developer must have a fundamental knowledge of it. My expertise is in GitHub/Bitbucket/GitLab. The following topics are essential in the domain of Git:
+Now let us move on toward the GIT. Git is very essential and it is used in every professional project and every software developer must have a fundamental knowledge of it. My expertise is in GitHub/Bitbucket/GitLab. 
+
+The following topics are essential in the domain of Git:
 -	Git Branching Strategy
 -	Git Basic Commands
 -	GitHub Access with PAT (Personal Access Token)/SSH Configuration 
@@ -73,6 +84,7 @@ I have added the YAML folder in my Repo and shared some templates like:
 -	Add Webhooks in GitHub and Bitbucket.
 -	GitHub Action with Cloud 
 I have added some basic commands and one GIT E-book to the repository.
+
 Helpful Link: 
 Complete Git and GitHub Tutorial (Kunal Kushwaha) - https://youtu.be/apGV9Kg7ics 
 
@@ -84,6 +96,7 @@ What is AWS?
 - AWS powers some of the biggest websites in the world Like Amazon, Netflix, etc.
 
 It is a very huge domain. Learning and practicing AWS takes time. I am working in AWS for the last 2.5 years trying to learn the services as much as I can.
+
 For Learning AWS, I have followed the Stephane Udemy courses. And the services I have learned are listed below:
 -	IAM
 -	EC2
@@ -121,17 +134,23 @@ I have added some material to my Amazon folder for reference. Go through the pro
 
 # Best Free Courses:
   
-AWS Cloud Practitioner (freecodecamp) - https://youtu.be/SOTamWNgDKc
-AWS Full Course (Edureka) - https://www.youtube.com/watch?v=k1RI5locZE4&ab_channel=edureka%21
+- AWS Cloud Practitioner (freecodecamp) - https://youtu.be/SOTamWNgDKc
+- AWS Full Course (Edureka) - https://www.youtube.com/watch?v=k1RI5locZE4&ab_channel=edureka%21
 
 # AWS Automation using Python-Boto3 APIs
-- The best part of this journey starts from here. Automation using Python as a programming language and Boto3 APIs, and building AWS solutions. Most of my professional experience revolves around this domain. In AWS, to find the best solutions we must have an idea of pricing, compliance, proximity to the customer, and service availability. Automation is a one-time effort it will reduce the manual effort. According to the requirement, we can automate the process. I wrote some basic functions and that helped a lot. 
+The best part of this journey starts from here. Automation using Python as a programming language and Boto3 APIs, and building AWS solutions. Most of my professional experience revolves around this domain. In AWS, to find the best solutions we must have an idea of pricing, compliance, proximity to the customer, and service availability. 
+
+Automation is a one-time effort it will reduce the manual effort. According to the requirement, we can automate the process. I wrote some basic functions and that helped a lot. 
+
 Prerequisite knowledge for AWS Automation:
+
 -	Having a working knowledge of Python
 -	Knowledge about using APIs
 -	Basic knowledge of AWS CLI, which is programmatical access to AWS
+
 I am explaining below a project step-by-step that I completed using Python and Boto3 API:
 Make sure AWS CLI is configured and the User has appropriate access to the service.
+
 1.	Get the EC2 Metadata in CSV format
 2.	EC2 state change – This function changes the state of EC2 from stop to start and vice versa.
 3.	Enforce Tagging EC2 to EBS – This function adds the same tags as EC2 have.
@@ -143,7 +162,7 @@ Make sure AWS CLI is configured and the User has appropriate access to the servi
 9.	Upload File to S3 – This function uploads the file over the S3 bucket 
 
 # Tag Harmonization Project:
-- I am sharing below a basic-level project as well. The scope of the project is to validate the tags attached to EC2, EBS, S3, VPC, IAM, Load Balancer, RDS, Subnet, and AMI.
+I am sharing below a basic-level project as well. The scope of the project is to validate the tags attached to EC2, EBS, S3, VPC, IAM, Load Balancer, RDS, Subnet, and AMI.
 
 1.	Working with AWS CLI, Lambda, SQS, DynamoDB, SES, CloudFormation, and Boto3 APIs
 2.	Attaching necessary tags to AWS services
@@ -201,10 +220,15 @@ Terraform: https://www.youtube.com/watch?v=YcJ9IeukJL8&ab_
 
 # Others Tools:
 I have gotten a chance to experience some other cloud-native tools like the Monitoring tool New Relic, and CloudWatch. 
+
 For Backup purposes, I have developed expertise with Cloud Ranger.
+
 For Security purposes, I have a knowledge of Trend Micro.
+
 For FinOps (cost optimization), I learnt Cloud Health.
+
 For BI tools, I have experience in SNOW, JIRA, and Confluence.
+
 Basic Knowledge of Cloud Migration 6 Rs.
 https://txture.io/en/blog/6-Rs-cloud-migration-strategies
 
