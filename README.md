@@ -132,23 +132,23 @@ Prerequisite knowledge for AWS Automation:
 •	Basic knowledge of AWS CLI, which is programmatical access to AWS
 I am explaining below a project step-by-step that I completed using Python and Boto3 API:
 Make sure AWS CLI is configured and the User has appropriate access to the service.
-•	Get the EC2 Metadata in CSV format
-•	EC2 state change – This function changes the state of EC2 from stop to start and vice versa.
-•	Enforce Tagging EC2 to EBS – This function adds the same tags as EC2 have.
-•	Get Older AMI – This function will get the older AMI. Helps in cost-saving. 
-•	Get Older Snapshot - This function will get the older snapshot against a specific time duration.
-•	Get Older Volumes - It gets the volumes that are in available state 
-•	List EC2 Tags – Lists all the Tags that are attached with any EC2 instance 
-•	Play with EC2 – This is the provisioning of EC2 and other uses of boto3 APIs
-•	Upload File to S3 – This function uploads the file over the S3 bucket 
+1.	Get the EC2 Metadata in CSV format
+2.	EC2 state change – This function changes the state of EC2 from stop to start and vice versa.
+3.	Enforce Tagging EC2 to EBS – This function adds the same tags as EC2 have.
+4.	Get Older AMI – This function will get the older AMI. Helps in cost-saving. 
+5.	Get Older Snapshot - This function will get the older snapshot against a specific time duration.
+6.	Get Older Volumes - It gets the volumes that are in available state 
+7.	List EC2 Tags – Lists all the Tags that are attached with any EC2 instance 
+8.	Play with EC2 – This is the provisioning of EC2 and other uses of boto3 APIs
+9.	Upload File to S3 – This function uploads the file over the S3 bucket 
 
-Tag Harmonization Project:
-I am sharing below a basic-level project as well. The scope of the project is to validate the tags attached to EC2, EBS, S3, VPC, IAM, Load Balancer, RDS, Subnet, and AMI.
+# Tag Harmonization Project:
+- I am sharing below a basic-level project as well. The scope of the project is to validate the tags attached to EC2, EBS, S3, VPC, IAM, Load Balancer, RDS, Subnet, and AMI.
 
-•	Working with AWS CLI, Lambda, SQS, DynamoDB, SES, CloudFormation, and Boto3 APIs
-•	Attaching necessary tags to AWS services
-•	Generating automated reports
-•	Sending emails to registered users using SES
+1.	Working with AWS CLI, Lambda, SQS, DynamoDB, SES, CloudFormation, and Boto3 APIs
+2.	Attaching necessary tags to AWS services
+3.	Generating automated reports
+4.	Sending emails to registered users using SES
 
 All the mentioned program is in the folder of Automation with Python and Boto3. This part helped me a lot in learning the DevOps. Without the open-source, the DevOps will never be complete. So, I have self-learned the DevOps tools to excel my skill set in the domain.
 
