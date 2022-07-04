@@ -33,6 +33,7 @@ This is not the end of Linux, and we can add more knowledge to it once we are in
 Following are a few helpful links:
 - Linux Fundamentals:  https://www.edx.org/course/introduction-to-linux
 - Bash Script Tutorial: https://www.youtube.com/watch?v=e7BufAVwDiM&ab
+
 A separate folder in the git hub repository has been added along with all the relevant data. You can also find the E-Books and practical examples.  
 
 # Networking Essentials:
@@ -60,8 +61,9 @@ https://www.youtube.com/watch?v=rv3QK2UquxM&ab
 
 # Knowledge of YAML/JSON
 The next stop is YAML. We can take help from the open-source community to learn YAML. I also take help from YouTube and some Udemy-based tutorials. 
-- One link is mentioned below for a quick start.
-https://www.youtube.com/watch?v=1uFVr15xDGg&ab
+
+One link is mentioned below for a quick start.
+- https://www.youtube.com/watch?v=1uFVr15xDGg&ab
 
 As I am working in AWS Cloud and my resource is CloudFormation. CloudFormation is a JSON-and-YAML-based Infrastructure as a code service.  I had provisioned EC2, ELB, S3, Lambda, SQS, SNS, IAM roles, ALB, Lambda, and many AWS services using YAML.
 
