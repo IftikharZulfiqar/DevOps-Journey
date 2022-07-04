@@ -35,18 +35,18 @@ A separate folder in the git hub repository has been added along with all the re
 # Networking Essentials:
 - The next topic is Networking. It is one of the most important pillars to continuing this Journey. Knowing VPC and its components is very helpful in designing cloud architecture and solutions. Knowledge of the following topics is essential.
 VPC Components:
-•	Subnets 
-•	Elastic Network Interfaces 
-•	Route Tables 
-•	Internet Gateways 
-•	Elastic Ip Addresses 
-•	Vpc Endpoints 
-•	Nat 
-•	VPC Peering 
-•	VPC Security (Security Groups)
-•	Disaster Recovery 
-•	VPC Flow Logs
-•	VPC Access Control List
+-	Subnets 
+-	Elastic Network Interfaces 
+-	Route Tables 
+-	Internet Gateways 
+-	Elastic Ip Addresses 
+-	Vpc Endpoints 
+-	Nat 
+-	VPC Peering 
+-	VPC Security (Security Groups)
+-	Disaster Recovery 
+-	VPC Flow Logs
+-	VPC Access Control List
 I have used all these components within the AWS Cloud Platform. Designed and Implemented solutions that are High available and secure.
 I have added the Network folder in the repository and shared the AWS Security and Linux Networking E-Book as a guide. 
 Helpful Link:
@@ -66,56 +66,56 @@ I have added the YAML folder in my Repo and shared some templates like:
 
 # Git Essentials
 - Now let us move on toward the GIT. Git is very essential and it is used in every professional project and every software developer must have a fundamental knowledge of it. My expertise is in GitHub/Bitbucket/GitLab. The following topics are essential in the domain of Git:
-•	Git Branching Strategy
-•	Git Basic Commands
-•	GitHub Access with PAT (Personal Access Token)/SSH Configuration 
-•	Create your own repo and pull-push files on it. For both public and private, create branches.
-•	Add Webhooks in GitHub and Bitbucket.
-•	GitHub Action with Cloud 
+-	Git Branching Strategy
+-	Git Basic Commands
+-	GitHub Access with PAT (Personal Access Token)/SSH Configuration 
+-	Create your own repo and pull-push files on it. For both public and private, create branches.
+-	Add Webhooks in GitHub and Bitbucket.
+-	GitHub Action with Cloud 
 I have added some basic commands and one GIT E-book to the repository.
 Helpful Link: 
 Complete Git and GitHub Tutorial (Kunal Kushwaha) - https://youtu.be/apGV9Kg7ics 
 
 # AWS Cloud
 What is AWS? 
-• AWS (Amazon Web Services) is a Cloud Provider 
-• AWS provides you with servers and services that you can use on-demand and scale easily 
-• AWS has revolutionized IT over time
-• AWS powers some of the biggest websites in the world Like Amazon, Netflix, etc.
+- AWS (Amazon Web Services) is a Cloud Provider 
+- AWS provides you with servers and services that you can use on-demand and scale easily 
+- AWS has revolutionized IT over time
+- AWS powers some of the biggest websites in the world Like Amazon, Netflix, etc.
 
 It is a very huge domain. Learning and practicing AWS takes time. I am working in AWS for the last 2.5 years trying to learn the services as much as I can.
 For Learning AWS, I have followed the Stephane Udemy courses. And the services I have learned are listed below:
-•	IAM
-•	EC2
-•	EBS
-•	S3
-•	Route53
-•	High Availability
-•	Load Balancer
-•	CloudFront
-•	RDS
-•	DynamoDB
-•	Lambda
-•	SES
-•	SQS
-•	SNS
-•	CloudWatch
-•	CloudFormation
-•	CloudTrail
-•	ECS
-•	API Gateway
-•	System Manger
-•	Cognito
-•	VPC
-•	Code Commit
-•	Code Build
-•	Code Deploy
-•	Code Pipeline
-•	Step Function
-•	Config
-•	(SAA-C02) AWS Certified Solutions Architect Associate
-•	(DVA-C01) Amazon Web Services Certified Developer
-•	(CLF-C01) AWS Cloud Practitioner
+-	IAM
+-	EC2
+-	EBS
+-	S3
+-	Route53
+-	High Availability
+-	Load Balancer
+-	CloudFront
+-	RDS
+-	DynamoDB
+-	Lambda
+-	SES
+-	SQS
+-	SNS
+-	CloudWatch
+-	CloudFormation
+-	CloudTrail
+-	ECS
+-	API Gateway
+-	System Manger
+-	Cognito
+-	VPC
+-	Code Commit
+-	Code Build
+-	Code Deploy
+-	Code Pipeline
+-	Step Function
+-	Config
+-	(SAA-C02) AWS Certified Solutions Architect Associate
+-	(DVA-C01) Amazon Web Services Certified Developer
+-	(CLF-C01) AWS Cloud Practitioner
 
 I have added some material to my Amazon folder for reference. Go through the provided material and grab the knowledge.
 
@@ -127,9 +127,9 @@ AWS Full Course (Edureka) - https://www.youtube.com/watch?v=k1RI5locZE4&ab_chann
 # AWS Automation using Python-Boto3 APIs
 - The best part of this journey starts from here. Automation using Python as a programming language and Boto3 APIs, and building AWS solutions. Most of my professional experience revolves around this domain. In AWS, to find the best solutions we must have an idea of pricing, compliance, proximity to the customer, and service availability. Automation is a one-time effort it will reduce the manual effort. According to the requirement, we can automate the process. I wrote some basic functions and that helped a lot. 
 Prerequisite knowledge for AWS Automation:
-•	Having a working knowledge of Python
-•	Knowledge about using APIs
-•	Basic knowledge of AWS CLI, which is programmatical access to AWS
+-	Having a working knowledge of Python
+-	Knowledge about using APIs
+-	Basic knowledge of AWS CLI, which is programmatical access to AWS
 I am explaining below a project step-by-step that I completed using Python and Boto3 API:
 Make sure AWS CLI is configured and the User has appropriate access to the service.
 1.	Get the EC2 Metadata in CSV format
@@ -161,9 +161,9 @@ Docker (TechWorldwithNana)-https://www.youtube.com/watch?v=3c-iBn73dDE&ab_channe
 
 # Ansible
 Ansible is a configuration management tool. It is agent-less, using the SSH to connect with nodes, and pushing the configuration accordingly. It works using the Push mechanism. I practiced using the three EC2 Linux instances. I installed the ansible to all my three instances and made one instance as master and declared the other two as Nodes. Creating a group of those two servers after applying the configurations to the master and nodes, I explored the following three ways to push the code:
-•	Ad-hoc commands (simple Linux)
-•	Modules (single work like install HTTP)
-•	Playbooks (more than one module)
+-	Ad-hoc commands (simple Linux)
+-	Modules (single work like install HTTP)
+-	Playbooks (more than one module)
 There is no idempotency in ad-hoc commands. It will overwrite/duplicate the file every time.
 With the help of the code pushing method, I have added the HTTP service to my node servers. It familiarized me with the Ansible architecture, despite it being a very basic task. I am adding my efforts to the Ansible folder.
 Here are some helpful links where we can quickly learn to start with Ansible:
