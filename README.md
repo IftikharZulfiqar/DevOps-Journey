@@ -32,7 +32,7 @@ Mounting the Disk, Resizing the Disk, and NFS Mounting.
 - This is not the end of Linux, and we can add more knowledge to it once we are in a professional environment.
 Following are a few helpful links:
 Linux Fundamentals:  https://www.edx.org/course/introduction-to-linux
-Bash Script Tutorial: https://www.youtube.com/watch?v=e7BufAVwDiM&ab_channel=linuxhint
+Bash Script Tutorial: https://www.youtube.com/watch?v=e7BufAVwDiM&ab
 A separate folder in the git hub repository has been added along with all the relevant data. You can also find the E-Books and practical examples.  
 
 # Networking Essentials:
@@ -56,12 +56,12 @@ I have used all these components within the AWS Cloud Platform. Designed and Imp
 
 I have added the Network folder in the repository and shared the AWS Security and Linux Networking E-Book as a guide. 
 Helpful Link:
-https://www.youtube.com/watch?v=rv3QK2UquxM&ab_channel=NetworkKings
+https://www.youtube.com/watch?v=rv3QK2UquxM&ab
 
 # Knowledge of YAML/JSON
 The next stop is YAML. We can take help from the open-source community to learn YAML. I also take help from YouTube and some Udemy-based tutorials. 
 - One link is mentioned below for a quick start.
-https://www.youtube.com/watch?v=1uFVr15xDGg&ab_channel=TechWorldwithNana   
+https://www.youtube.com/watch?v=1uFVr15xDGg&ab
 
 As I am working in AWS Cloud and my resource is CloudFormation. CloudFormation is a JSON-and-YAML-based Infrastructure as a code service.  I had provisioned EC2, ELB, S3, Lambda, SQS, SNS, IAM roles, ALB, Lambda, and many AWS services using YAML.
 
@@ -135,7 +135,7 @@ I have added some material to my Amazon folder for reference. Go through the pro
 # Best Free Courses:
   
 - AWS Cloud Practitioner (freecodecamp) - https://youtu.be/SOTamWNgDKc
-- AWS Full Course (Edureka) - https://www.youtube.com/watch?v=k1RI5locZE4&ab_channel=edureka%21
+- AWS Full Course (Edureka) - https://www.youtube.com/watch?v=k1RI5locZE4&ab
 
 # AWS Automation using Python-Boto3 APIs
 The best part of this journey starts from here. Automation using Python as a programming language and Boto3 APIs, and building AWS solutions. Most of my professional experience revolves around this domain. In AWS, to find the best solutions we must have an idea of pricing, compliance, proximity to the customer, and service availability. 
@@ -175,8 +175,8 @@ All the mentioned program is in the folder of Automation with Python and Boto3. 
 Docker is a containerization tool. It has changed the monolithic way to microservices. In DevOps, it has created a big value. In order to clear my concepts with docker and also for practice purposes, I wrote the docker file and worked with docker-compose. Exploring docker-swarm made me confident in docker. It is a small effort but it is a jump start. We can further explore this domain in our professional careers. I have shared my findings in the form of a PDF in the Docker folder as well as some interview-related questions.
 
 The best tutorial that I have followed for docker and it has helped me a lot to learn docker:
-Docker (KodeKloud)-https://www.youtube.com/watch?v=zJ6WbK9zFpI&ab_channel=KodeKloud
-Docker (TechWorldwithNana)-https://www.youtube.com/watch?v=3c-iBn73dDE&ab_channel=TechWorldwithNana
+Docker (KodeKloud)-https://www.youtube.com/watch?v=zJ6WbK9zFpI&ab
+Docker (TechWorldwithNana)-https://www.youtube.com/watch?v=3c-iBn73dDE&ab
 
 # Ansible
 Ansible is a configuration management tool. It is agent-less, using the SSH to connect with nodes, and pushing the configuration accordingly. It works using the Push mechanism. I practiced using the three EC2 Linux instances. I installed the ansible to all my three instances and made one instance as master and declared the other two as Nodes. Creating a group of those two servers after applying the configurations to the master and nodes, I explored the following three ways to push the code:
@@ -187,7 +187,7 @@ There is no idempotency in ad-hoc commands. It will overwrite/duplicate the file
 With the help of the code pushing method, I have added the HTTP service to my node servers. It familiarized me with the Ansible architecture, despite it being a very basic task. I am adding my efforts to the Ansible folder.
 Here are some helpful links where we can quickly learn to start with Ansible:
 
-Ansible (Kodekloude)-https://www.youtube.com/watch?v=LfuP38ZWlbU&list=PL2We04F3Y_42_PN52bT_U5o_lt6uPQqqq&ab_channel=KodeKloud
+Ansible (Kodekloude)-https://www.youtube.com/watch?v=LfuP38ZWlbU&list=PL2We04F3Y_42_PN52bT_U5o_lt6uPQqqq&ab
 
 Ansible (Nana) - https://www.youtube.com/watch?v=1id6ERvfozo&ab
 
