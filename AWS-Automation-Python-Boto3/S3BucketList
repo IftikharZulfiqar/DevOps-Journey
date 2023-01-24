@@ -1,0 +1,16 @@
+import boto3
+import csv
+
+# Connect to S3
+s3 = boto3.client('s3')
+
+# List the buckets in your account
+buckets = s3.list_buckets()
+
+# Create a CSV file to store the results
+with open('s3_buckets.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Name', 'CreationDate'])
+    # Iterate over the buckets and write the results to the CSV file
+    for bucket in buckets['Buckets']:
+        writer.writerow([bucket['Name'], bucket['CreationDate']])
