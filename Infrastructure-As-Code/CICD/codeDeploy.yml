@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Create and Configure CodeBuild Project
+Parameters:  
+  S3Bucket:
+    Description: S3 Bucket that stores the deployment bundle
+    Type: String
+    Default: aws-devops-codedeploy-iftikhar
+  S3Key:
+    Description: S3 Object key that points to the deployment bundle
+    Type: String
+    Default: MyCodeDeployApplication/app.zip
+Resources:
+  MyCodeDeployApplication:
+    Type: AWS::CodeDeploy::Application
+    Properties:
+      ApplicationName: MyCodeDeployApplication  
+      ComputePlatform: Server
+# Deployment group is the set of ec2 instances 
+  MyCodeDeployDeploymentGroup:
+    Type: AWS::CodeDeploy::DeploymentGroup
+    Properties:      
+      ApplicationName: !Ref MyCodeDeployApplication
+      DeploymentGroupName: MyCodeDeployDeploymentGroup
+      ServiceRoleArn: !GetAtt CodeDeployRole.Arn     
+      DeploymentStyle:
+        DeploymentOption: WITHOUT_TRAFFIC_CONTROL
+        DeploymentType: IN_PLACE      
+      Ec2TagFilters:
+      - Key: ENV
+        Value: Dev
+        Type: KEY_AND_VALUE
+      DeploymentConfigName: CodeDeployDefault.AllAtOnce
+      Deployment:
+        Description: Initial deployment
+        IgnoreApplicationStopFailures: 'true'
+        Revision:
+          RevisionType: S3
+          S3Location:
+            Bucket:
+              Ref: S3Bucket
+            Key:
+              Ref: S3Key
+            BundleType: Zip
+                      
+  CodeDeployRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          -
+            Effect: "Allow"
+            Principal:
+              Service:
+                - "codedeploy.amazonaws.com"
+            Action:
+              - "sts:AssumeRole"
+      Path: "/"
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole

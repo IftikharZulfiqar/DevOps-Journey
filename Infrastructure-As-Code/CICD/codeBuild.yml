@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Create and Configure CodeBuild Project
+Resources:
+  CodeBuildProject:
+    Type: AWS::CodeBuild::Project
+    DependsOn: CodeBuildRole
+    Properties:
+      Name: MyCodeBuildProject
+      ServiceRole: !Ref CodeBuildRole
+      Artifacts:
+        Type: NO_ARTIFACTS        
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/standard:6.0
+        PrivilegedMode: true
+        EnvironmentVariables:
+          - Name: AWS_DEFAULT_REGION
+            Value: us-east-1
+            Type: PLAINTEXT
+          - Name: AWS_ACCOUNT_ID
+            Value: '196236753581'
+            Type: PLAINTEXT
+          - Name: IMAGE_REPO_NAME
+            Value: test
+            Type: PLAINTEXT      
+      SourceVersion: refs/heads/master
+      Source:
+        Type: CODECOMMIT
+        Location: https://git-codecommit.us-east-1.amazonaws.com/v1/repos/codecommit               
+        BuildSpec: buildspec.yaml
+      LogsConfig:
+        CloudWatchLogs:
+          Status: ENABLED
+      Tags:
+      - Key: Name
+        Value: Iftikhar
+      - Key: Project
+        Value: CloudOps
+  CodeBuildRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          Effect: Allow
+          Principal:
+            Service: codebuild.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess    
