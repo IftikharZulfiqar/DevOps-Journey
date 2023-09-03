@@ -1,10 +1,13 @@
 ---------------------------------------------------------------------------------------------
 Quick Start with Git:
-# Below commands used for the git hub configurations 
+# Below are commands used for the git hub configurations 
 git config --global user.name
 git config --global user.email
 git config --list
 git init
+
+#To store the cred of GitHub over any server 
+command:  git config --global credential.helper store
 
 # How to check the status
 git status
@@ -22,13 +25,13 @@ git show
 
 # git push command is used to upload local repository content to a remote repository.
 git remote add origin <url>
-git push -i orign master
+git push -i origin master
 
 # pull command is used to fetch and download content from a remote repository 
 # and immediately update the local repository to match that content.
 git pull -u origin master
 
-# git ignored - a file which Git has been explicitly told to ignore
+# git ignored - a file that Git has been explicitly told to ignore
 git add .gitignore 
 git log --oneline
 
